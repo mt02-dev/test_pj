@@ -11,8 +11,10 @@ RUN apt-get update -qq && \
     libpq-dev \
     libvips \
     make \
-    nodejs && \
+    nodejs \
+    npm && \
     rm -rf /var/lib/apt/lists/*
+RUN npm install -g -y yarn
 
 # Install application gems
 COPY Gemfile Gemfile.lock ./
